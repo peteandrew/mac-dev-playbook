@@ -2,23 +2,20 @@
 downloads: ~/.ansible-downloads/
 
 configure_dotfiles: yes
-configure_sudoers: yes
+configure_sudoers: no
 configure_terminal: yes
-configure_osx: yes
+configure_osx: no
 
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
+dotfiles_repo: git@github.com:peteandrew/dotfiles.git
 dotfiles_repo_accept_hostkey: yes
-dotfiles_repo_local_destination: ~/Dropbox/Development/GitHub/dotfiles
+dotfiles_repo_local_destination: ~/Documents/dotfiles
 dotfiles_files:
-  - .bash_profile
-  - .gitignore
-  - .inputrc
-  - .osx
   - .vimrc
+  - .zshrc
 
 homebrew_installed_packages:
-  # - ansible # Installed via Pip.
   - autoconf
+  - awscli
   - bash-completion
   - doxygen
   - gettext
@@ -26,6 +23,7 @@ homebrew_installed_packages:
   - git
   - go
   - gpg
+  - heroku
   - hub
   - httpie
   - iperf
@@ -35,7 +33,6 @@ homebrew_installed_packages:
   - nmap
   - node
   - nvm
-  - php
   - ssh-copy-id
   - cowsay
   - readline
@@ -47,23 +44,21 @@ homebrew_installed_packages:
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
+  - heroku/brew
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - chromedriver
   - docker
-  - dropbox
-  - firefox
-  - google-chrome
-  - handbrake
   - licecap
-  - macvim
-  - sequel-pro
+  - iterm2
   - skitch
-  - slack
-  - sublime-text
+  #- slack
+  #- spectacle
   - transmit
   - vagrant
+  - { name: virtualbox, install_options: no-quarantine } 
+  - visual-studio-code
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []
@@ -87,7 +82,9 @@ npm_packages: []
   # - name: webpack
   #   state: present # present/absent/latest, default: present
   #   version: "^2.6" # default: N/A
-pip_packages: []
+pip_packages: [
+  buckup
+]
   # - name: mkdocs
   #   state: present # present/absent/latest, default: present
   #   version: "0.16.3" # default: N/A
