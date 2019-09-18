@@ -28,6 +28,7 @@ homebrew_installed_packages:
   - httpie
   - iperf
   - libevent
+  - libpq
   - sqlite
   - mcrypt
   - nmap
@@ -38,8 +39,8 @@ homebrew_installed_packages:
   - readline
   - openssl
   - pv
-  - wget
   - watch
+  - wget
   - wrk
 
 homebrew_taps:
